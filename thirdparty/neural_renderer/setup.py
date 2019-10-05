@@ -14,15 +14,15 @@ ext_modules=[
     CUDAExtension('neural_renderer.cuda.load_textures', [
         'neural_renderer/cuda/load_textures_cuda.cpp',
         'neural_renderer/cuda/load_textures_cuda_kernel.cu',
-        ]),
+        ], extra_compile_args={'cxx': ['-g'],'nvcc': ['-arch=sm_61']}),
     CUDAExtension('neural_renderer.cuda.rasterize', [
         'neural_renderer/cuda/rasterize_cuda.cpp',
         'neural_renderer/cuda/rasterize_cuda_kernel.cu',
-        ]),
+        ], extra_compile_args={'cxx': ['-g'],'nvcc': ['-arch=sm_61']}),
     CUDAExtension('neural_renderer.cuda.create_texture_image', [
         'neural_renderer/cuda/create_texture_image_cuda.cpp',
         'neural_renderer/cuda/create_texture_image_cuda_kernel.cu',
-        ]),
+        ], extra_compile_args={'cxx': ['-g'],'nvcc': ['-arch=sm_61']}),
     ]
 
 INSTALL_REQUIREMENTS = ['numpy', 'torch', 'torchvision', 'scikit-image', 'tqdm', 'imageio']
